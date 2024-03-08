@@ -33,11 +33,8 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding: 20px 10px;
-    position: absolute;
-    /* z-index: 5; */
     bottom: 50px;
-    /* height: 60vh;
-    transition: height .3s ease-out; */
+    height: 100vh;
 }
 
 /* .profile__activities:active{
@@ -143,7 +140,8 @@ progress[value]::-moz-progress-bar {
 
 *************************************************************************
 
-.activities__title h3{
+.activities__title h3,
+.transactions__title h3{
     background: olive;
     font-size: 1.4rem;
     text-transform: capitalize;
@@ -192,5 +190,74 @@ progress[value]::-moz-progress-bar {
 }
 
 .activities__carusel__img h4 {
-    bottom: 25px;
+    bottom: 20px;
+}
+
+/* ***************************************************************** */
+
+
+.transactions{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.transactions__balance{
+    /* background: red; */
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 55vh;
+    overflow-y: scroll;
+}
+
+.transactions__carucel{
+    /* background: blue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transactions__description{
+    /* background: green; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.transactions__up,
+.transactions__down{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 40px;
+    color: var(--color-primary);
+}
+
+.transactions__down{
+    color: var(--color-secundary);
+}
+
+.transactions__description i{
+    font-size: 1.8em;
+}
+
+.transactions__value{
+    /* background: violet; */
+}
+
+.transactions__description div p,
+.transactions__value p{
+    font-family: "SF-Pro-Text-Semibold";
+    text-transform: capitalize;
+    
+}
+
+.transactions__description div small,
+.transactions__value small{
+    color: var(--color-cuarto);
+    font-family: "SF-Pro-Text-Light";
+    text-transform: capitalize;
 }

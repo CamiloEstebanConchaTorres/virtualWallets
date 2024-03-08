@@ -15,6 +15,11 @@
 }
 
 @font-face {
+    font-family: "SF-Pro-Text-Light";
+    src: url(../storage/font/SF-Pro-Text-Font-Family/SF-Pro-Text-Light.otf);
+}
+
+@font-face {
     font-family: "SF-Pro-Text-Bold";
     src: url(../storage/font/SF-Pro-Text-Font-Family/SF-Pro-Text-Bold.otf);
 }
