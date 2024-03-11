@@ -113,7 +113,7 @@
     padding: 10px;
     grid-template-columns: repeat(1,1fr);
     grid-gap: 25px;
-    background-image: url(/storage/img/Bakcground.gif);
+    background-image: url(../storage/img/Bakcground.gif);
     background-repeat: no-repeat;
     background-size: cover;
     height: 87vh;
@@ -871,7 +871,7 @@ progress[value]::-moz-progress-bar {
    }
 
    .balance__{
-    background-image: url(/storage/img/R.gif);
+    background-image: url(../storage/img/R.gif);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
