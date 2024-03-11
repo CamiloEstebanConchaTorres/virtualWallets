@@ -6,15 +6,23 @@
     font-family: "SF-Pro-Text-Regular";
 }
 
+
 /* MENU MOVIL */
 
 .menu{
-    background: var(--color-secundary);
+    background: rgb(0, 0, 0);
     position: fixed;
     bottom: 0;
     width: 100%;
+    animation: cambiaColormenu 2s infinite;
 }
-
+@keyframes cambiaColormenu {
+  0% { background-color: rgb(0, 20, 85); }
+  25% { background-color: rgb(8, 8, 63); }
+  50% { background-color: rgb(19, 7, 128); }
+  75% { background-color: rgb(77, 63, 199); }
+  100% { background-color: rgb(13, 8, 78); }
+}
 .menu ul{
     width: 100%;
     height: 50px;
@@ -56,6 +64,14 @@
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    animation: cambiaColor 2s infinite;
+}
+@keyframes cambiaColor {
+  0% { background-color: rgb(0, 20, 85); }
+  25% { background-color: rgb(8, 8, 63); }
+  50% { background-color: rgb(19, 7, 128); }
+  75% { background-color: rgb(77, 63, 199); }
+  100% { background-color: rgb(13, 8, 78); }
 }
 
 .logo, .burger{
@@ -69,12 +85,15 @@
 .logo{
     grid-area: logo;
     gap: 10px;
+    
 }
 
 .logo h1{
     font-size: 1.2rem;
     text-transform: uppercase;
     font-family: "SF-Pro-Text-Bold";
+    color: #fff;
+
 }
 
 .burger{
@@ -84,6 +103,7 @@
 
 .logo i, .burger i{
     font-size: 24px;
+    color: #fff;
 }
 
 /* **************************************************************************************************** */
@@ -93,6 +113,10 @@
     padding: 10px;
     grid-template-columns: repeat(1,1fr);
     grid-gap: 25px;
+    background-image: url(/storage/img/Bakcground.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 87vh;
 }
 .banner {
     display: flex;
@@ -110,7 +134,28 @@
     font-size: 1.4rem;
     text-transform: capitalize;
     font-family: "SF-Pro-Text-Bold";
+    color: #fff;
+    background-color: rgba(3, 3, 19, 0.616);
+    display: inline-block;
+    animation: moveAndChangeColor 3s infinite alternate;
+    border-radius: 100px;
+  }
+  
+@keyframes moveAndChangeColor {
+  0% {
+    transform: translateX(0);
+    color: #3498db;
+  }
+  50% {
+    transform: translateX(50px);
+    color: #e74c3c;
+  }
+  100% {
+    transform: translateX(0);
+    color: #3498db;
+  }
 }
+
 
 .banner__publicidad{
     width: 100%;
@@ -142,13 +187,33 @@
     padding: 0 20px;
     text-align: center;
     position: relative;
+    background-color: rgba(151, 11, 6, 0.767);
 }
 .banner__data strong{
     font-family: "SF-Pro-Text-Bold";
+    animation: changeColor 5s infinite;
 }
 .banner__data small{
     font-family: "SF-Pro-Text-Regular";
+    animation: changeColors 5s infinite;
 }
+
+@keyframes changeColor {
+  0% { color: red; }
+  25% { color: blue; }
+  50% { color: green; }
+  75% { color: orange; }
+  100% { color: purple; }
+}
+
+@keyframes changeColors {
+  0% { color: red; }
+  25% { color: black; }
+  50% { color: white; }
+  75% { color: yellow; }
+  100% { color: blue; }
+}
+
 .banner__close{
     position: absolute;
     background: var(--color-primary);
@@ -159,6 +224,7 @@
     top: 5px;
     right: 10px;
     border-radius: 100%;
+    background: rgb(69, 69, 235);
 }
 .banner__more{
     margin-top: 10px;
@@ -168,7 +234,20 @@
     font-size: .8rem;
     color: var(--color-ternario);
     padding: 5px;
-    background: var(--color-primary);
+    background: rgb(59, 59, 151);
+    animation: growAndShrink 2s infinite;
+}
+
+@keyframes growAndShrink {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2); /* Puedes ajustar el factor de escala según tus preferencias */
+  }
+  100% {
+      transform: scale(1);
+  }
 }
 
 /* ************************************************************************************************************** */
@@ -192,9 +271,8 @@
 }
 
 .carusel__img {
-    min-width: 55%;
+    min-width: 100%;
     min-height: 40vh;
-    background: url(../storage/img/card.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -206,16 +284,13 @@
     color: var(--color-ternario);
 }
 
-.carusel__img small {
-    top: 20px;
-    right: 20px;
-    position: absolute;
-}
 
 .carusel__img img {
-    left: 20px;
     bottom: 20px;
     position: absolute;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .carusel__img h2 {
     position: absolute;
@@ -247,7 +322,6 @@
 
 
 .profile__activities{
-    background: var(--color-ternario);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding: 20px 10px;
@@ -274,15 +348,42 @@
     flex-direction: column;
     text-transform:  capitalize;
     color: var(--color-ternario);
-}
+  }
+  
+  @keyframes changeColor {
+    0% { color: red; }
+    25% { color: blue; }
+    50% { color: green; }
+    75% { color: orange; }
+    100% { color: purple; }
+  }
+
+
 .profile__titule h3{
     font-size: 2em;
     font-family: "SF-Pro-Text-Heavy.otf";
+    animation: changeColors_profileh3 5s infinite;
 }
+@keyframes changeColors_profileh3 {
+  0% { color: red; }
+  25% { color: blue; }
+  50% { color: green; }
+  75% { color: orange; }
+  100% { color: purple; }
+}
+
 
 .profile__titule p{
     font-size: 2.3em;
     font-family: "SF-Pro-Text-Regular";
+    animation: changeColors_profilep 5s infinite;
+}
+@keyframes changeColors_profilep {
+  0% { color: rgb(141, 0, 0); }
+  25% { color: rgb(16, 16, 46); }
+  50% { color: white; }
+  75% { color: rgb(18, 31, 156); }
+  100% { color: rgb(185, 110, 185); }
 }
 
 .profile__process{
@@ -360,12 +461,40 @@ progress[value]::-moz-progress-bar {
 
 .activities__title h3,
 .transactions__title h3{
-    background: olive;
     font-size: 1.4rem;
     text-transform: capitalize;
     font-family: "SF-pro-Text-Bold";
+    
 }
 
+.transactions__title{
+  color: blue;
+  animation: changeColors_transactionstile 5s infinite;
+}
+
+@keyframes changeColors_transactionstile {
+  0% { color: rgb(218, 104, 104); }
+  25% { color: rgb(144, 144, 196); }
+  50% { color: rgb(99, 187, 27); }
+  75% { color: rgb(18, 31, 156); }
+  100% { color: rgb(154, 218, 4); }
+}
+
+.transactions__title h3{
+  color: orange;
+  animation: changeColors_transactionsh3 5s infinite;
+}
+@keyframes changeColors_transactionsh3 {
+  0% { color: rgb(194, 39, 39); }
+  25% { color: rgb(32, 32, 245); }
+  50% { color: rgb(255, 251, 0); }
+  75% { color: rgb(194, 195, 202); }
+  100% { color: rgb(255, 2, 255); }
+}
+
+.activities__title h4{
+  color: #fff;
+}
 
 
 .activities__carusel__card {
@@ -383,7 +512,6 @@ progress[value]::-moz-progress-bar {
 .activities__carusel__img {
     min-width: 30%;
     min-height: 19vh;
-    background: var(--color-ternario);
     box-shadow: var(--color-shado-transparent);
     border-radius: 10px;
     background-size: contain;
@@ -396,6 +524,15 @@ progress[value]::-moz-progress-bar {
     align-items: center;
     color: var(--color-secundary);
     margin: 15px 0;
+    background: rgb(39, 21, 21);
+    animation: changeColors_activities_Carusel_img 5s infinite;
+}
+@keyframes changeColors_activities_Carusel_img {
+  0% { color: rgb(194, 39, 39); }
+  25% { color: rgb(32, 32, 245); }
+  50% { color: rgb(255, 251, 0); }
+  75% { color: rgb(194, 195, 202); }
+  100% { color: rgb(255, 2, 255); }
 }
 
 .activities__carusel__img small,
@@ -485,16 +622,17 @@ progress[value]::-moz-progress-bar {
     height: 200px;
     margin: 0px 0px;
     overflow: hidden;
-    background-color: #33404F;
+    background-color: black;
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
+    border-bottom: 2px solid blue;
   }
   
   .caja1 {
     position: absolute;
     width: 100px;
     height: 100px;
-    background-color: #ffffff27;
+    background-color: rgba(132, 48, 211, 0.096);
     border-radius: 50%;
     transform-origin: center;
     animation: moverCaja 15s linear infinite;
@@ -522,7 +660,7 @@ progress[value]::-moz-progress-bar {
       position: absolute;
       width: 50px;
       height: 50px;
-      background-color: #ffffff27;
+      background-color: rgba(132, 48, 211, 0.096);
       border-radius: 50%;
       transform-origin: center;
       animation: moverCaja2 15s linear infinite;
@@ -550,7 +688,7 @@ progress[value]::-moz-progress-bar {
       position: absolute;
       width: 25px;
       height: 25px;
-      background-color: #ffffff27;
+      background-color: rgba(132, 48, 211, 0.096);
       border-radius: 50%;
       transform-origin: center;
       animation: moverCaja3 15s linear infinite;
@@ -578,7 +716,7 @@ progress[value]::-moz-progress-bar {
       position: absolute;
       width: 150px;
       height: 150px;
-      background-color: #ffffff27;
+      background-color: rgba(132, 48, 211, 0.096);
       border-radius: 50%;
       transform-origin: center;
       animation: moverCaja4 15s linear infinite;
@@ -606,7 +744,7 @@ progress[value]::-moz-progress-bar {
       position: absolute;
       width: 50px;
       height: 50px;
-      background-color: #ffffff27;
+      background-color: rgba(132, 48, 211, 0.096);
       border-radius: 50%;
       transform-origin: center;
       animation: moverCaja5 15s linear infinite;
@@ -634,7 +772,7 @@ progress[value]::-moz-progress-bar {
       position: absolute;
       width: 100px;
       height: 100px;
-      background-color: #ffffff27;
+      background-color: rgba(132, 48, 211, 0.096);
       border-radius: 50%;
       transform-origin: center;
       animation: moverCaja6 15s linear infinite;
@@ -662,7 +800,7 @@ progress[value]::-moz-progress-bar {
   
     .Circulo{
       position: absolute;
-      background: #00DDA3;
+      background: #333b06;
       width: 200px;
       border-radius: 100%;
       display: flex;
@@ -674,7 +812,21 @@ progress[value]::-moz-progress-bar {
       gap: 10px;
       margin-left: 21%;
       margin-top: 20%;
+      border: 2px solid blue;
     }
+
+    .Circulo p{
+      animation: changeColors_balance 5s infinite;
+      font-weight: bold;
+    }
+    
+    @keyframes changeColors_balance {
+      0% { color: red; }
+      25% { color: blue; }
+      50% { color: green; }
+      75% { color: orange; }
+      100% { color: purple; }
+    } 
   
   
     .Circulo img{
@@ -695,7 +847,7 @@ progress[value]::-moz-progress-bar {
     }
   
     .Botones button{
-      background: #fff;
+      background: black;
       padding: 10px;
       border: 1px solid #00DDA3;
       border-radius: 20px;
@@ -707,107 +859,20 @@ progress[value]::-moz-progress-bar {
       background: #33404F;
     }
   
-    .Vectores{
-      position: absolute;
-      height: 15%;
-      width: 90%;
-      margin-top: 105%;
-      margin-left: 4%;
+    .IMAGEN_results{
+      position: relative;
     }
   
-    .Vectores img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; 
-    }
-  
-    .numero1{
-      position: absolute;
-      width: 40px;
-      height: 20px;
-      margin-top: 350px;
-      margin-left: 45%;
-    }
-  
-    .numero2{
-      position: absolute;
-      width: 40px;
-      height: 20px;
-      margin-top: 350px;
-      margin-left: 83%;
-      color: #00DDA3;
-    }
-  
-    .Ellipse23{
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      margin-top: 372px;
-      margin-left: 51%;
-    }
-  
-    .Ellipse23 img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; 
-    }
-  
-    .Ellipse24{
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      margin-top: 372px;
-      margin-left: 88%;
-    }
-  
-    .Ellipse24 img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; 
-    }
-  
-    .Frame42{
-      position: absolute;
-      width: 300px;
-      height: 40px;
-      margin-top: 480px;
-      margin-left: 8%;
-    }
-  
-    .Frame42 img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; 
-    }
-  
-    .Frame24{
-      position: absolute;
-      width: 100%;
-      height: 20%;
-      margin-top: 510px;
+   .IMAGEN_results img{
+    max-width: 80%;
+    height: 10%;
+    margin-top: 95%;
+    margin-left: 10%;
    }
-  
-    .Frame24 img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: contain; 
-    }
-  
-    .Frame15{
-      position: absolute;
-      width: 100%;
-      height: 12%;
-      margin-top: 665px;
+
+   .balance__{
+    background-image: url(/storage/img/R.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
    }
-  
-  .Frame15 img{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: contain; 
-    }
